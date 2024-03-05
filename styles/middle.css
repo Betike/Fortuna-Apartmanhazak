@@ -1,0 +1,42 @@
+.pics-and-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.pics-and-contact a h3 {
+  margin-bottom: 0;
+}
+
+.home-pics, .home-contact {
+  margin-bottom: 1em;
+  padding-bottom: 2em;
+  border-bottom: dashed var(--dark-blue) 2px;
+}
+
+.services-and-sights {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container img {
+  width: 150px;
+  height: 70px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.sights-text {
+  display: flex;
+  flex-direction: column;
+}

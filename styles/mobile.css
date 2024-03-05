@@ -1,0 +1,26 @@
+.page-h1 h1 {
+  font-size: 50px;
+}
+
+#map {
+  width: 300px;
+  height: 300px;
+}
+
+footer {
+  font-size: 15px;
+}
+
+.apartman-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-container h1 {
+  font-size: 25px;
+}
+
+.img-container img {
+  max-width: 100px;
+}

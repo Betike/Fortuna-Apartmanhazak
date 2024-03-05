@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1146px)" href="styles/bigger_tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 937px)" href="styles/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width: 380px)" href="styles/mobile.css">
+    <title>Bogácsi Fortuna Apartmanházak - Galéria</title>
+    <link rel="icon" type="image/png" href="pics/napocskapng.png" sizes="any">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@200;300;400&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Mooli&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97dfddf33d.js" crossorigin="anonymous"></script>
+    
+  </head>
+  <body class="gallery-page-body">
+    <header class="gallery-page-header">
+      <nav>
+      <div class="header-title"><a class="header-title-a" href="index.html">Bogácsi <i class="fa-solid fa-clover"></i> Fortuna Apartmanházak</a></div>
+      <div class="nav-links-div">
+      <ul>
+          <li>
+            <a class="nav-link" href="index.html">Bemutatkozás</a>
+          </li>
+          <li>
+            <a class="nav-link" href="gallery.html">Galéria</a>
+          </li>
+          <li>
+            <a class="nav-link" href="contact.html">Információk</a>
+          </li>
+        </ul>
+      </div>
+      <div class="bars-icon" id="bars">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      </nav>
+      <div class="down-nav">
+        <ul>
+          <li>
+            <a class="nav-link" id="home-page-nav" href="index.html" data-scroll data-scroll-animation="fadeInDown">Főoldal</a>
+          </li>
+          <li>
+            <a class="nav-link" id="gallery-nav" href="gallery.html" data-scroll data-scroll-animation="fadeInDown">Galéria</a>
+          </li>
+          <li>
+            <a class="nav-link" id="contact-nav" href="contact.html" data-scroll data-scroll-animation="fadeInDown">Információk</a>
+          </li>
+        </ul>
+      </div>
+  </header>
+  <div class="page-h1">
+    <h1>Képgaléria</h1>
+  </div>
+  <div class="gallery-container">
+    <div id="gallery"></div>
+  </div>
+  <div class="full-img" id="fullImgBox">
+    <img src="pics/fortuna2.jpg" id="fullImg">
+    <span class="close-full-img" onclick="closeFullImg()"><i class="fa-solid fa-x"></i></span>
+    <span class="prev-pic" onclick="prevFullImg()"><i class="fa-solid fa-chevron-left"></i></span>
+    <span class="next-pic" onclick="nextFullImg()"><i class="fa-solid fa-chevron-right"></i></span>
+  </div>
+  <footer>
+    <div class="footer-container-base">
+    <div class="footer-container">
+      <div class="footer-div-1">
+        <p><i class="fa-solid fa-location-pin"></i> 3412 Bogács, Őz utca 3. (Magyarország)</p>
+        <p><i class="fa-solid fa-phone"></i> +36-30-294-6720</p>
+        <p><i class="fa-solid fa-envelope"></i> fortunabogacs@gmail.com</p>
+      </div>
+      <div class="footer-div-2">
+        <p>Szállásfoglalás:</p>
+        <a class="footer-phone-num">+36-30-294-6720</a>
+      </div>
+      <div class="footer-div-3">
+        <p>Facebook:</p>
+        <a href="https://www.facebook.com/profile.php?id=61555958078708" target="_blank"><button class="footer-booking"><i class="fa-brands fa-facebook"></i> Fortuna Apartmanházak</button></a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <p>Copyright © 2024. Minden jog fenntrartva</p>
+      <p>Az oldalt Tóth Levente készítette</p>
+    </div>
+  </div>
+  </footer>
+</body>
+<script src="script.js"></script>
+<script>
+  fetch('./pics_gallery.json')
+  .then(response => response.json())
+  .then(data => {
+    const gallery = document.getElementById('gallery');
+
+    data.forEach((item, index) => {
+      for (let key in item) {
+        const img = document.createElement('img');
+        img.src = item[key];
+        img.alt = 'Kép';
+        img.style.width = '200px';
+        img.style.height = '200px';
+        img.style.objectFit = 'cover';
+        img.onclick = function() {
+          openFullImg(img, img.src);
+        };
+        gallery.appendChild(img);
+      }
+    });
+  })
+</script>
+</html>
