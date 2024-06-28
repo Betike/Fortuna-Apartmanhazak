@@ -1,5 +1,15 @@
 [
   {
+    "pic_main": "pics/fortuna_main_view.jpg",
+    "pic_main_sided": "pics/fortuna_main_view_sided.jpg",
+    "pic_onehouse": "pics/fortuna_one_house.jpg",
+    "pic_onehouse2": "pics/fortuna_one_house_2.jpg",
+    "pic_pavement": "pics/fortuna_pavement_side.jpg",
+    "pic_housedoor": "pics/fortuna_house_door.jpg",
+    "pic_gardenhouse": "pics/fortuna_garden_one_house.jpg",
+    "pic_soccerhouses": "pics/fortuna_garden_back_and_houses.jpg",
+    "pic_backhouse": "pics/fortuna_garden_back_side.jpg",
+    "pic_soccer": "pics/fortuna_garden_back_soccer.jpg",
     "pic1": "pics/fortuna-main.jpg",
     "pic2": "pics/fortuna2.jpg",
     "pic3": "pics/fortuna3.jpg",
